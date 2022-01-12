@@ -3,10 +3,11 @@
 @import "base/fonts";
 @import "base/mixins";
 @import "base/all";
+@import "base/buttons";
 
 
 @import "layout/header";
-//@import "layout/opening";
+@import "layout/opening";
 //@import "layout/benefits";
 //@import "layout/statistics";
 //@import "layout/pricing";

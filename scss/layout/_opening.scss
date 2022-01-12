@@ -1,0 +1,37 @@
+.opening_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.opening__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
+
+  .opening__title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: $font-secondary;
+    padding: 4px 20px;
+  }
+
+  .opening__text {
+    text-align: center;
+    padding: 0 50px;
+  }
+}
+
+.opening__img {
+  width: 200%;
+  transform: translate(-25%);
+
+  @include tablet {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+}
