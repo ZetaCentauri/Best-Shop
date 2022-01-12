@@ -373,11 +373,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-a {
-  color: #000;
-}
-
-/* header */
 .header {
   background-color: #fff;
   box-shadow: 0 3px 6px #00000029;
@@ -391,6 +386,17 @@ a {
   width: 90%;
   display: flex;
   justify-content: space-between;
+}
+
+.page-logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  color: #08A6E4;
 }
 
 .menu {
@@ -414,23 +420,13 @@ a {
   font-weight: 700;
   letter-spacing: 3.28px;
   color: #A5A5A5;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 .menu li a:hover {
   color: black;
 }
 
-.header .page-logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: 300;
-  font-family: "Raleway", sans-serif;
-  color: #08A6E4;
-}
-
-/* menu */
 /* menu icon */
 .menu-icon {
   cursor: pointer;
@@ -441,7 +437,6 @@ a {
       -ms-user-select: none;
           user-select: none;
 }
-
 .menu-icon .navicon {
   background-color: #07ACE6;
   display: block;
@@ -471,37 +466,35 @@ a {
 }
 
 /* menu btn */
-.header .menu-btn {
+.menu-btn {
   display: none;
 }
-
-.header .menu-btn:checked ~ .menu {
+.menu-btn:checked ~ .menu {
   max-height: 240px;
+  padding: 20px 0;
 }
-
-.header .menu-btn:checked ~ .menu-icon .navicon {
+.menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
 }
-
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+.menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
-
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+.menu-btn:checked ~ .menu-icon .navicon:before,
+.menu-btn:checked ~ .menu-icon .navicon:after {
   top: 0;
 }
 
-/* 48em = 768px */
-@media (min-width: 48em) {
+@media (min-width: 768px) {
   .header li a {
-    padding: 20px 30px;
+    padding: 20px 10px;
+    margin: 0 10px;
   }
-
+  .header li a:hover {
+    border-bottom: 2px solid #08A6E4;
+  }
   .header .menu {
     max-height: none;
     position: static;
@@ -510,7 +503,6 @@ a {
     display: flex;
     justify-content: space-between;
   }
-
   .header .menu-icon {
     display: none;
   }
