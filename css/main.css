@@ -378,7 +378,7 @@ body {
   font-size: 1rem;
   font-weight: 700;
   color: white;
-  padding: 22px 0;
+  padding: 25px 0;
   margin-top: 20px;
   background-color: #07ACE6;
   box-shadow: 5px 10px 14px #07ACE629;
@@ -468,9 +468,7 @@ body {
   transition: background 0.2s ease-out;
   width: 18px;
 }
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
+.menu-icon .navicon:before, .menu-icon .navicon:after {
   background-color: #07ACE6;
   content: "";
   display: block;
@@ -479,12 +477,10 @@ body {
   transition: all 0.2s ease-out;
   width: 100%;
 }
-
-.header .menu-icon .navicon:before {
+.menu-icon .navicon:before {
   top: 5px;
 }
-
-.header .menu-icon .navicon:after {
+.menu-icon .navicon:after {
   top: -5px;
 }
 
@@ -549,11 +545,11 @@ body {
   text-align: center;
   font-size: 3rem;
   font-family: "Raleway", sans-serif;
-  padding: 4px 20px;
+  padding: 12px 20px;
 }
 .opening__container .opening__text {
   text-align: center;
-  padding: 0 50px;
+  padding: 18px 50px;
 }
 
 .opening__img {

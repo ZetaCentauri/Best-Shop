@@ -79,27 +79,26 @@
     position: relative;
     transition: background .2s ease-out;
     width: 18px;
+
+    &:before,
+    &:after {
+      background-color: $secondary-color;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+    }
+
+    &:before {
+      top: 5px;
+    }
+
+    &:after {
+      top: -5px;
+    }
   }
-}
-
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-  background-color: $secondary-color;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-  top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-  top: -5px;
 }
 
 /* menu btn */
