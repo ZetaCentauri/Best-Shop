@@ -432,7 +432,6 @@ body {
   left: 0;
   width: 100%;
   box-shadow: 0 3px 6px #00000029;
-  background-color: transparent;
 }
 .menu li a {
   text-transform: uppercase;
@@ -446,7 +445,7 @@ body {
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
 }
-.menu li a:hover {
+.menu li a:hover, .menu li a:focus {
   color: black;
 }
 
@@ -491,6 +490,7 @@ body {
 .menu-btn:checked ~ .menu {
   max-height: 240px;
   padding: 20px 0;
+  background: #ffffff;
 }
 .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
@@ -511,7 +511,7 @@ body {
     padding: 20px 10px;
     margin: 0 10px;
   }
-  .header li a:hover {
+  .header li a:hover, .header li a:focus {
     border-bottom: 2px solid #08A6E4;
   }
   .header .menu {

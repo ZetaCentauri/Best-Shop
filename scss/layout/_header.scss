@@ -38,10 +38,9 @@
   left: 0;
   width: 100%;
   box-shadow: 0 3px 6px #00000029;
-  background-color: transparent;
+
 
   li {
-
     a {
       text-transform: uppercase;
       display: block;
@@ -54,9 +53,9 @@
       border-top: 2px solid transparent;
       border-bottom: 2px solid transparent;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: black;
-
       }
   }
   }
@@ -110,8 +109,8 @@
     .menu {
       max-height: 240px;
       padding: 20px 0;
+      background: #ffffff;
     }
-
     .menu-icon .navicon {
       background: transparent;
 
@@ -136,7 +135,8 @@
       padding: 20px 10px;
       margin: 0 10px;
 
-      &:hover {
+      &:hover,
+      &:focus {
         border-bottom: 2px solid $primary-color;
       }
     }
