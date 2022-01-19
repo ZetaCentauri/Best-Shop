@@ -396,6 +396,29 @@ body {
   }
 }
 
+.pricing__button {
+  background-color: #55DFB4;
+  border-radius: 23px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -27.5px;
+  align-self: center;
+  font: normal normal bold 13px/41px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn--blue {
+  background: #08A6E4;
+}
+.btn--red {
+  background: #FB3B64;
+}
+
 .header {
   background-color: #fff;
   box-shadow: 0 3px 6px #00000029;
@@ -733,23 +756,24 @@ body {
   }
 }
 
-.benefits__box--text:after {
-  content: "";
-  width: 332px;
-  height: 4px;
-  display: block;
-  margin-top: 50px;
-  background: #FB3B64;
-}
+@media (min-width: 768px) {
+  .benefits__box--text:after {
+    content: "";
+    width: 332px;
+    height: 4px;
+    display: block;
+    margin-top: 50px;
+    background: #FB3B64;
+  }
 
-.benefits__box--text.blue:after {
-  background: #08A6E4;
-}
+  .benefits__box--text.blue:after {
+    background: #08A6E4;
+  }
 
-.benefits__box--text.green:after {
-  background: #55DFB4;
+  .benefits__box--text.green:after {
+    background: #55DFB4;
+  }
 }
-
 .benefits__box .image-container {
   position: relative;
   z-index: 0;
@@ -811,11 +835,11 @@ body {
 .last_benefits_boxes .text-container {
   background: #ffffff;
   padding: 35px;
-  margin-right: 50px;
 }
 @media (min-width: 768px) {
   .last_benefits_boxes .text-container {
     padding-top: 50px;
+    margin-right: 50px;
   }
 }
 .last_benefits_boxes .image-container {
@@ -835,5 +859,64 @@ body {
 }
 .last_benefits_boxes .image-container img {
   margin-top: 55px;
+}
+
+.pricing .pricing_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+}
+
+.pricing__header {
+  font-size: 2.25rem;
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+}
+
+.pricing__box {
+  width: 100%;
+  position: relative;
+  border: 1px solid #55DFB4;
+  border-radius: 18px;
+  padding: 20px 0 30px 0;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.pricing__box-container {
+  display: flex;
+}
+
+.pricing__details {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+}
+.pricing__details h3 {
+  font: bold 1.2rem "Raleway", sans-serif;
+  color: #13253B;
+  text-align: center;
+}
+.pricing__details .price {
+  font-weight: 300;
+  font-size: 2.875rem;
+  color: #55DFB4;
+  text-align: center;
+}
+.pricing__details p {
+  font: bold 0.75rem "Raleway", sans-serif;
+  color: #13253B;
+  text-align: center;
+}
+
+.pricing__list li {
+  font-size: 0.875rem;
+  line-height: 2.5625rem;
+  padding: 0 5px;
 }
 /*# sourceMappingURL=main.css.map */

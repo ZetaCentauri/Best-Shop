@@ -94,21 +94,25 @@
   }
 }
 //------------------------COLORED LINES------------------//
-.benefits__box--text:after {
-      content: "";
-      width: 332px;
-      height: 4px;
-      display: block;
-      margin-top: 50px;
-      background: $accent-color-red;
-    }
+@include tablet {
 
-.benefits__box--text.blue:after {
-      background: $primary-color;
-    }
-.benefits__box--text.green:after  {
-      background: $accent-color-green;
-    }
+  .benefits__box--text:after {
+    content: "";
+    width: 332px;
+    height: 4px;
+    display: block;
+    margin-top: 50px;
+    background: $accent-color-red;
+  }
+
+  .benefits__box--text.blue:after {
+    background: $primary-color;
+  }
+  .benefits__box--text.green:after {
+    background: $accent-color-green;
+  }
+
+}
 
 //----------------------CIRCLE AND RHOMBUS-----------------//
 .benefits__box {
@@ -181,10 +185,11 @@
   .text-container {
     background: #ffffff;
     padding: 35px;
-    margin-right: 50px;
+
 
     @include tablet {
       padding-top: 50px;
+      margin-right: 50px;
     }
   }
 

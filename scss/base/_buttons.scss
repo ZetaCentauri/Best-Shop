@@ -19,3 +19,30 @@
     width: 440px;
   }
 }
+
+.pricing__button {
+  background-color: $accent-color-green;
+  border-radius: 23px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -27.5px;
+  align-self: center;
+  font: normal normal bold 13px/41px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btn{
+  &--blue {
+    background: $primary-color;
+  }
+
+  &--red {
+    background: $accent-color-red;
+  }
+}
+
