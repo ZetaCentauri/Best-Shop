@@ -861,18 +861,29 @@ body {
   margin-top: 55px;
 }
 
+.pricing {
+  width: 100%;
+}
 .pricing .pricing_container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .pricing__header {
   font-size: 2.25rem;
   font-family: "Raleway", sans-serif;
   padding: 20px;
+}
+
+.pricing__boxes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pricing__box {
@@ -882,11 +893,21 @@ body {
   border-radius: 18px;
   padding: 20px 0 30px 0;
   margin-bottom: 80px;
+  max-width: 370px;
   display: flex;
   justify-content: center;
 }
+.pricing__box.border--red {
+  border-color: #FB3B64;
+}
+.pricing__box.border--blue {
+  border-color: #07ACE6;
+  box-shadow: 5px 10px 27px #07ACE629;
+  max-width: 400px;
+}
 
 .pricing__box-container {
+  width: 100%;
   display: flex;
 }
 
@@ -896,6 +917,7 @@ body {
   align-content: center;
   justify-content: center;
   width: 50%;
+  padding: 20px;
 }
 .pricing__details h3 {
   font: bold 1.2rem "Raleway", sans-serif;
@@ -907,6 +929,13 @@ body {
   font-size: 2.875rem;
   color: #55DFB4;
   text-align: center;
+  padding: 10px;
+}
+.pricing__details .price--red {
+  color: #FB3B64;
+}
+.pricing__details .price--blue {
+  color: #07ACE6;
 }
 .pricing__details p {
   font: bold 0.75rem "Raleway", sans-serif;
@@ -918,5 +947,21 @@ body {
   font-size: 0.875rem;
   line-height: 2.5625rem;
   padding: 0 5px;
+}
+.pricing__list li.checked:before {
+  content: "\f14a";
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-size: 1em;
+  color: #55DFB4;
+  margin-right: 10px;
+}
+.pricing__list li.unchecked:before {
+  content: "";
+  background-image: url("/Desktop/Close.svg");
+  font-size: 0.8em;
+  margin-right: 10px;
+  width: 11px;
+  height: 11px;
+  display: inline-block;
 }
 /*# sourceMappingURL=main.css.map */
