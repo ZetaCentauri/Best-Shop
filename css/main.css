@@ -881,21 +881,33 @@ body {
 
 .pricing__boxes-container {
   width: 100%;
+  max-width: 1300px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+@media (min-width: 992px) {
+  .pricing__boxes-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
 
 .pricing__box {
-  width: 100%;
+  width: 90%;
   position: relative;
   border: 1px solid #55DFB4;
   border-radius: 18px;
   padding: 20px 0 30px 0;
   margin-bottom: 80px;
-  max-width: 370px;
+  max-width: 600px;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 992px) {
+  .pricing__box {
+    max-width: 370px;
+  }
 }
 .pricing__box.border--red {
   border-color: #FB3B64;
@@ -903,12 +915,25 @@ body {
 .pricing__box.border--blue {
   border-color: #07ACE6;
   box-shadow: 5px 10px 27px #07ACE629;
-  max-width: 400px;
+  width: 100%;
+  max-width: 650px;
+}
+@media (min-width: 992px) {
+  .pricing__box.border--blue {
+    max-width: 400px;
+    height: 500px;
+  }
 }
 
 .pricing__box-container {
   width: 100%;
   display: flex;
+}
+@media (min-width: 992px) {
+  .pricing__box-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .pricing__details {
@@ -918,6 +943,11 @@ body {
   justify-content: center;
   width: 50%;
   padding: 20px;
+}
+@media (min-width: 992px) {
+  .pricing__details {
+    padding-bottom: 50px;
+  }
 }
 .pricing__details h3 {
   font: bold 1.2rem "Raleway", sans-serif;
@@ -943,6 +973,11 @@ body {
   text-align: center;
 }
 
+@media (min-width: 992px) {
+  .pricing__list {
+    text-align: center;
+  }
+}
 .pricing__list li {
   font-size: 0.875rem;
   line-height: 2.5625rem;

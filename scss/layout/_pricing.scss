@@ -20,24 +20,32 @@
 
 .pricing__boxes-container {
   width: 100%;
+  max-width: 1300px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .pricing__box {
-  width: 100%;
+  width: 90%;
   position: relative;
   border: 1px solid #55DFB4;
   border-radius: 18px;
   padding: 20px 0 30px 0;
   margin-bottom: 80px;
-  max-width: 370px;
+  max-width: 600px;
 
   display: flex;
   justify-content: center;
-
+  @include desktop {
+    max-width: 370px;
+  }
 
   &.border-- {
     &red {
@@ -47,7 +55,13 @@
     &blue {
       border-color: $secondary-color;
       box-shadow: 5px 10px 27px #07ACE629;
-      max-width: 400px;
+      width: 100%;
+      max-width: 650px;
+
+      @include desktop {
+        max-width: 400px;
+        height: 500px;
+      }
     }
   }
 }
@@ -56,6 +70,10 @@
   width: 100%;
   display: flex;
 
+  @include desktop {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .pricing__details {
@@ -65,6 +83,10 @@
   justify-content: center;
   width: 50%;
   padding: 20px;
+
+  @include desktop {
+    padding-bottom: 50px;
+  }
   h3 {
     font: bold 1.2rem $font-secondary;
     color: #13253B;
@@ -94,6 +116,10 @@
 }
 
 .pricing__list {
+  @include desktop {
+    text-align: center;
+  }
+
   li {
     font-size: 0.875rem;
     line-height: 2.5625rem;
