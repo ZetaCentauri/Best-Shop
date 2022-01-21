@@ -1015,11 +1015,24 @@ body {
 
 .contact_and_form {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .contact_and_form__container {
   padding: 0 15px;
 }
+@media (min-width: 768px) {
+  .contact_and_form__container {
+    max-width: 900px;
+    display: flex;
+  }
+}
 
+@media (min-width: 768px) {
+  .questions_container {
+    flex: 50%;
+  }
+}
 .questions_container h2 {
   font-size: 3.0625rem;
   line-height: 3.5625rem;
@@ -1029,11 +1042,17 @@ body {
   margin: 5px 0 35px 0;
 }
 
+@media (min-width: 768px) {
+  .contact_container {
+    display: flex;
+  }
+}
 .contact_container span {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.375rem;
   color: #A5A5A5;
+  padding-right: 10px;
   display: flex;
   align-items: center;
 }
@@ -1043,6 +1062,7 @@ body {
   width: 30px;
   display: inline-block;
   background-repeat: no-repeat;
+  margin-top: 5px;
 }
 .contact_container span.email::before {
   background-image: url("/Desktop/Mail Icon.svg");
@@ -1053,6 +1073,11 @@ body {
 
 .form_container {
   margin-top: 20px;
+}
+@media (min-width: 768px) {
+  .form_container {
+    flex: 50%;
+  }
 }
 
 .contact__form {
@@ -1066,7 +1091,10 @@ body {
   line-height: 0.9375rem;
   letter-spacing: 0.205rem;
   color: #08A6E4;
-  padding: 20px 0 0 0;
+  padding-top: 20px;
+}
+.contact__form .label:first-child {
+  padding-top: 0;
 }
 .contact__form .input {
   border: none;

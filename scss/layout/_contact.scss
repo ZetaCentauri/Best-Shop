@@ -2,13 +2,26 @@
 
 .contact_and_form {
 width: 100%;
+  display: flex;
+  justify-content: center;
+
 
   &__container {
     padding: 0 15px;
+
+    @include tablet {
+      max-width: 900px;
+      display: flex;
+
+
+    }
   }
 }
 
 .questions_container {
+  @include tablet {
+    flex: 50%;
+  }
   h2 {
     font-size: 3.0625rem;
     line-height: 3.5625rem;
@@ -23,11 +36,16 @@ width: 100%;
 
 .contact_container {
 
+  @include tablet {
+    display: flex;
+  }
+
   span {
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.375rem;
     color: $text-color;
+    padding-right: 10px;
 
     display: flex;
     align-items: center;
@@ -38,11 +56,13 @@ width: 100%;
       width: 30px;
       display: inline-block;
       background-repeat: no-repeat;
+      margin-top: 5px; //przesunięcie ikonek, żeby były na środku napisu
     }
 
 
     &.email::before {
       background-image: url("/Desktop/Mail Icon.svg");
+
     }
 
     &.phone::before {
@@ -55,6 +75,10 @@ width: 100%;
 
 .form_container {
   margin-top: 20px;
+
+  @include tablet {
+    flex: 50%;
+  }
 }
 
 .contact__form {
@@ -62,12 +86,17 @@ width: 100%;
   flex-direction: column;
   justify-content: space-between;
   .label {
+
     font-weight: bold;
     font-size: 0.6875rem;
     line-height: 0.9375rem;
     letter-spacing: 0.205rem;
     color: $primary-color;
-    padding: 20px 0 0 0;
+    padding-top: 20px;
+
+    &:first-child {
+      padding-top: 0;
+    }
   }
 
   .input {
