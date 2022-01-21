@@ -46,3 +46,17 @@
   }
 }
 
+.send_button {
+  height: 57px;
+  width: 226px;
+
+  color: white;
+  text-transform: capitalize;
+  font: normal normal bold 13px/18px;
+  align-self: flex-end;
+  border: none;
+  background-color: $primary-color;
+  box-shadow: 5px 10px 14px #07ACE629;
+  border-radius: 35px;
+}
+

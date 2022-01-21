@@ -419,6 +419,19 @@ body {
   background: #FB3B64;
 }
 
+.send_button {
+  height: 57px;
+  width: 226px;
+  color: white;
+  text-transform: capitalize;
+  font: normal normal bold 13px/18px;
+  align-self: flex-end;
+  border: none;
+  background-color: #08A6E4;
+  box-shadow: 5px 10px 14px #07ACE629;
+  border-radius: 35px;
+}
+
 .header {
   background-color: #fff;
   box-shadow: 0 3px 6px #00000029;
@@ -999,4 +1012,112 @@ body {
   height: 11px;
   display: inline-block;
 }
+
+.contact_and_form {
+  width: 100%;
+}
+.contact_and_form__container {
+  padding: 0 15px;
+}
+
+.questions_container h2 {
+  font-size: 3.0625rem;
+  line-height: 3.5625rem;
+  font-family: "Raleway", sans-serif;
+}
+.questions_container p {
+  margin: 5px 0 35px 0;
+}
+
+.contact_container span {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: #A5A5A5;
+  display: flex;
+  align-items: center;
+}
+.contact_container span::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.contact_container span.email::before {
+  background-image: url("/Desktop/Mail Icon.svg");
+}
+.contact_container span.phone::before {
+  background-image: url("/Desktop/Phone Icon.svg");
+}
+
+.form_container {
+  margin-top: 20px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact__form .label {
+  font-weight: bold;
+  font-size: 0.6875rem;
+  line-height: 0.9375rem;
+  letter-spacing: 0.205rem;
+  color: #08A6E4;
+  padding: 20px 0 0 0;
+}
+.contact__form .input {
+  border: none;
+  border-bottom: 1px solid #95989A;
+  height: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+/*----------checkbox------------*/
+.checkbox_label {
+  flex-shrink: 0;
+  flex-basis: 60px;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  margin: 20px 15px 20px 0;
+  padding-left: 35px;
+  font: normal normal normal 12px/17px;
+  color: #707070;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox_input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #FFF;
+  padding: 5px;
+  border: 1px solid #95989A;
+  border-radius: 4px;
+}
+
+/*!* When the checkbox is checked, add a background *!*/
+.checkbox_input:checked ~ .checkmark {
+  background-image: url("/Desktop/Checkmark.svg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*------------checkbox end----------*/
 /*# sourceMappingURL=main.css.map */
