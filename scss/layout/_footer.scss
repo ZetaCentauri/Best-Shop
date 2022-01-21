@@ -1,0 +1,49 @@
+.footer {
+  height: 90px;
+  width: 100%;
+  background: #F7F7F7 0 0 no-repeat padding-box;
+  box-shadow: 0px -5px 40px #00000029;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    max-width: 1360px;
+  }
+}
+
+
+
+.logo_container {
+  padding: 0 20px;
+  .footer_page_logo {
+    font: normal normal 300 26px/30px Raleway;
+    color: $secondary-color;
+  }
+  span {
+    font: normal normal normal 11px/15px;
+    letter-spacing: 0;
+    color: $text-color;
+  }
+
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  div {
+    width: 24px;
+    height: 24px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .twitter {
+    background-image: url("/Desktop/Twitter.svg");
+  }
+  .facebook {
+    background-image: url("/Desktop/Facebook.svg");
+  }
+}
+

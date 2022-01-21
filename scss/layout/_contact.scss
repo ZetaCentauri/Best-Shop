@@ -1,9 +1,10 @@
 //------------Any Questions----------//
 
 .contact_and_form {
-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 60px;
 
 
   &__container {
@@ -111,10 +112,7 @@ width: 100%;
 
 /*----------checkbox------------*/
 
-
-
 .checkbox_label {
-
   flex-shrink: 0;
   flex-basis: 60px;
   cursor: pointer;
@@ -125,36 +123,39 @@ width: 100%;
   font: normal normal normal 12px/17px;
   color: #707070;
 
-}
-/* Hide the browser's default checkbox */
-.checkbox_input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 22px;
-  width: 22px;
-  background-color: #FFF;
+  /* Hide the browser's default checkbox */
+  .checkbox_input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 
-  padding: 5px;
+    /*!* When the checkbox is checked, add a background *!*/
+    &:checked ~ .checkmark {
+      background-image: url("/Desktop/Checkmark.svg");
+      background-size: auto;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+}
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #FFF;
 
-  border: 1px solid #95989A;
-  border-radius: 4px;
+    padding: 5px;
+
+    border: 1px solid #95989A;
+    border-radius: 4px;
+  }
 }
 
-/*!* When the checkbox is checked, add a background *!*/
-.checkbox_input:checked ~ .checkmark {
-  background-image: url("/Desktop/Checkmark.svg");
-  background-size: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
+
 
 /*------------checkbox end----------*/
