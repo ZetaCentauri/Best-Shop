@@ -1,0 +1,162 @@
+.calculator {
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f7F7F7;
+
+
+  h2 {
+  padding-bottom: 40px;
+    padding-top: 80px;
+  }
+}
+
+.calc__container {
+  width: 90%;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+
+  }
+}
+
+.calc-form__container {
+@include tablet {
+  width: 100%;
+}
+}
+
+.calc-form {
+
+}
+
+.calc-form__input {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 1px solid $primary-color;
+  box-shadow: 0 3px 6px #08A6E429;
+  border-radius: 6px;
+
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  color: $text-color;
+}
+
+.calc-form__select-input {
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: '';
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 14px;
+    background-image: url("/Desktop/Arrow Down.svg");
+
+  }
+}
+
+.calc-form__dropdown-list {
+  position: absolute;
+  top: 120%;
+  left: -1px;
+  box-shadow: 0 3px 6px #EB476E29;
+  border: 1px solid #EB476E;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #FFFFFF;
+  z-index: 1;
+  padding: 4px 20px;
+
+
+  .dropdown-list__item {
+    color: black;
+    padding: 7px 0;
+  }
+}
+
+
+//----------------------------------------CALC CHOICES-----------------------------------
+
+.calc__choices {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+
+  @include tablet {
+    padding-top:0;
+    width: 100%;
+    padding-left: 40px;
+  }
+}
+
+.choices__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.calc__choice {
+  width: 100%;
+  background-color: $accent-color-green;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 8px 20px;
+  margin-bottom: 8px;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 6px;
+}
+
+.choice__ {
+  &name {
+    font-size: 0.875rem;
+  }
+
+  &value {
+    font-size: 0.875rem;
+  }
+
+  &price {
+    font-size: 1.125em;
+    font-weight: bold;
+  }
+}
+
+
+.total {
+  background-color: $primary-color;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 6px;
+  width: 50%;
+  text-align: left;
+  align-self: flex-end;
+
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 15px;
+
+  &__name {
+
+  }
+
+  &__price {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+ }
