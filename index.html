@@ -157,24 +157,24 @@
     <div class="calc__container">
         <div class="calc-form__container">
             <form class="calc-form">
-                <input type="number" class="calc-form__input">
-                <input type="number" class="calc-form__input">
+                <input type="number" class="calc-form__input products-input">
+                <input type="number" class="calc-form__input orders-input">
                 <div class="calc-form__select-input calc-form__input">kjkh
                     <ul class="calc-form__dropdown-list">
-                        <li class="dropdown-list__item">Basic</li>
-                        <li class="dropdown-list__item">Professional</li>
-                        <li class="dropdown-list__item">Premium</li>
+                        <li class="dropdown-list__item basic">Basic</li>
+                        <li class="dropdown-list__item professional">Professional</li>
+                        <li class="dropdown-list__item premium">Premium</li>
                     </ul>
                 </div>
 
                 <label class="checkbox_label">
                     Accounting
-                    <input type="checkbox" class="checkbox_input">
+                    <input type="checkbox" class="checkbox_input accounting-checkbox">
                     <span class="checkmark"></span>
                 </label>
                 <label class="checkbox_label">
                     Rental of a payment terminal
-                    <input type="checkbox" class="checkbox_input">
+                    <input type="checkbox" class="checkbox_input terminal-checkbox">
                     <span class="checkmark"></span>
                 </label>
 
@@ -183,30 +183,28 @@
 
         <div class="calc__choices">
             <ul class="choices__list">
-                <li class="calc__choice">
+                <li class="calc__choice products-output">
                     <span class="choice__name">Products</span>
                     <span class="choice__value">0</span>
                     <span class="choice__price">0</span>
                 </li>
-                <li class="calc__choice">
+                <li class="calc__choice orders-output">
                     <span class="choice__name">Orders</span>
                     <span class="choice__value">0</span>
                     <span class="choice__price">0</span>
                 </li>
-                <li class="calc__choice">
-                    <span class="choice__name">Package</span>
+                <li class="calc__choice package-output">
+                    <span class="choice__name ">Package</span>
                     <span class="choice__value">Basic</span>
                     <span class="choice__price">0</span>
                  </li>
-                <li class="calc__choice">
-                    <span class="choice__name">Accounting</span>
-                    <span class="choice__value"></span>
-                    <span class="choice__price"></span>
+                <li class="calc__choice accounting-output">
+                    <span class="choice__name ">Accounting</span>
+                    <span class="choice__price">$35</span>
                  </li>
-                <li class="calc__choice">
+                <li class="calc__choice terminal-output">
                     <span class="choice__name">Terminal</span>
-                    <span class="choice__value"></span>
-                    <span class="choice__price"></span>
+                    <span class="choice__price">$5</span>
                  </li>
             </ul>
             <div class="total">
