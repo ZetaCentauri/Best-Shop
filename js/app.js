@@ -157,6 +157,8 @@ const updateTotal = function() {
 
         totalPriceText.innerText =
             "$" + (productsCost + ordersCost + packageCost + accountingCost + terminalCost);
+    } else {
+        totalOutput.classList.add('d-none');
     }
 }
 
