@@ -32,7 +32,7 @@ const checkboxes = document.querySelectorAll('.checkbox_input');
 let totalPrice = 0;
 
 
-const pricesMap = {
+const prices = {
     products: 2,
     orders: 0.3,
     package: {
@@ -41,7 +41,7 @@ const pricesMap = {
         premium: 40
     },
     accounting: 35,
-    terminal: 5
+    terminal: 9
 };
 
 
@@ -52,8 +52,8 @@ const handleProducts = function(e) {
         productsPrice.innerText = "Value should be greater than 0";
         productsCalculations.innerText = "";
     } else {
-        productsCalculations.innerText = e.target.value + " * $" + pricesMap.products;
-        let prodPrice = this.value * pricesMap.products;
+        productsCalculations.innerText = e.target.value + " * $" + prices.products;
+        let prodPrice = this.value * prices.products;
 
         productsPrice.innerText = "$" + prodPrice.toFixed(2);
         totalOutput.classList.remove('d-none');
@@ -70,8 +70,8 @@ const handleOrders= function(e) {
         ordersPrice.innerText = "Value should be greater than 0";
         ordersCalculations.innerText = "";
     } else {
-        ordersCalculations.innerText = this.value + " * $" + pricesMap.orders;
-        let ordPrice = e.target.value * pricesMap.orders;
+        ordersCalculations.innerText = this.value + " * $" + prices.orders;
+        let ordPrice = e.target.value * prices.orders;
         ordersPrice.innerText = "$" + ordPrice.toFixed(2);
         totalOutput.classList.remove('d-none');
     }
@@ -94,14 +94,14 @@ const handlePackageChoice = function(e) {
     packageOutput.classList.remove('d-none');
 
     if (chosenPackage.innerText === "Basic") {
-        packagePrice.innerText = "$" + pricesMap.package.basic;
+        packagePrice.innerText = "$" + prices.package.basic;
     }
 
     if (chosenPackage.innerText === "Professional") {
-        packagePrice.innerText = "$" + pricesMap.package.professional;
+        packagePrice.innerText = "$" + prices.package.professional;
     }
     if (chosenPackage.innerText === "Premium") {
-        packagePrice.innerText = "$" + pricesMap.package.premium;
+        packagePrice.innerText = "$" + prices.package.premium;
     }
 
     totalOutput.classList.remove('d-none');
@@ -113,13 +113,15 @@ dropdownItems.forEach(function(item) {
 
 const handleAccounting = function(e) {
    accountingOutput.classList.toggle('d-none');
-    totalOutput.classList.remove('d-none');
+   accountingPrice.innerText = "$" + prices.accounting;
+   totalOutput.classList.remove('d-none');
 }
 
 accountingCheckbox.addEventListener("change", handleAccounting);
 
 const handleTerminal = function(e) {
     terminalOutput.classList.toggle('d-none');
+    terminalPrice.innerText = "$" + prices.terminal;
     totalOutput.classList.remove('d-none');
 }
 
