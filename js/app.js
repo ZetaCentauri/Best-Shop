@@ -29,9 +29,6 @@ const checkboxes = document.querySelectorAll('.checkbox_input');
 
 //-------------------------------------------
 
-let totalPrice = 0;
-
-
 const prices = {
     products: 2,
     orders: 0.3,
@@ -48,17 +45,18 @@ const prices = {
 const handleProducts = function(e) {
     productsOutput.classList.remove('d-none');
 
-    if (this.value <= 0) {
+    if (!this.value.length) {
+        productsOutput.classList.add('d-none');
+    } else if  (this.value <= 0) {
         productsPrice.innerText = "Value should be greater than 0";
         productsCalculations.innerText = "";
     } else {
         productsCalculations.innerText = e.target.value + " * $" + prices.products;
         let prodPrice = this.value * prices.products;
-
         productsPrice.innerText = "$" + prodPrice.toFixed(2);
         totalOutput.classList.remove('d-none');
     }
-
+    updateTotal();
 }
 
 productsInput.addEventListener("change", handleProducts);
@@ -66,7 +64,9 @@ productsInput.addEventListener("keyup", handleProducts);
 
 const handleOrders= function(e) {
     ordersOutput.classList.remove('d-none');
-    if (this.value <= 0) {
+    if (!this.value.length) {
+        ordersOutput.classList.add('d-none');
+    } else if (this.value <= 0) {
         ordersPrice.innerText = "Value should be greater than 0";
         ordersCalculations.innerText = "";
     } else {
@@ -75,6 +75,7 @@ const handleOrders= function(e) {
         ordersPrice.innerText = "$" + ordPrice.toFixed(2);
         totalOutput.classList.remove('d-none');
     }
+    updateTotal();
 }
 
 ordersInput.addEventListener("change", handleOrders);
@@ -87,24 +88,30 @@ this.classList.toggle('opened');
 
 packageInput.addEventListener('click', handleDropDownList);
 
+function choosePackage() {
+    let chosenPackagePrice = 0;
+    if (chosenPackage.innerText === "Basic") {
+        chosenPackagePrice = prices.package.basic;
+    }
+    if (chosenPackage.innerText === "Professional") {
+        chosenPackagePrice = prices.package.professional;
+    }
+    if (chosenPackage.innerText === "Premium") {
+        chosenPackagePrice = prices.package.premium;
+    }
+    return chosenPackagePrice;
+}
+
 const handlePackageChoice = function(e) {
 
     chosenPackage.innerText = this.innerText;
     packageInput.childNodes[0].nodeValue = this.innerText;
     packageOutput.classList.remove('d-none');
 
-    if (chosenPackage.innerText === "Basic") {
-        packagePrice.innerText = "$" + prices.package.basic;
-    }
-
-    if (chosenPackage.innerText === "Professional") {
-        packagePrice.innerText = "$" + prices.package.professional;
-    }
-    if (chosenPackage.innerText === "Premium") {
-        packagePrice.innerText = "$" + prices.package.premium;
-    }
+    packagePrice.innerText = "$" + choosePackage();
 
     totalOutput.classList.remove('d-none');
+    updateTotal();
 }
 
 dropdownItems.forEach(function(item) {
@@ -115,6 +122,7 @@ const handleAccounting = function(e) {
    accountingOutput.classList.toggle('d-none');
    accountingPrice.innerText = "$" + prices.accounting;
    totalOutput.classList.remove('d-none');
+    updateTotal();
 }
 
 accountingCheckbox.addEventListener("change", handleAccounting);
@@ -123,6 +131,7 @@ const handleTerminal = function(e) {
     terminalOutput.classList.toggle('d-none');
     terminalPrice.innerText = "$" + prices.terminal;
     totalOutput.classList.remove('d-none');
+    updateTotal();
 }
 
 terminalCheckbox.addEventListener("change", handleTerminal);
@@ -130,7 +139,25 @@ terminalCheckbox.addEventListener("change", handleTerminal);
 
 
 const updateTotal = function() {
+    const displayedChoices = document.querySelectorAll(".calc__choice:not(.d-none)").length > 0;
+    console.log(displayedChoices);
 
+    if (displayedChoices) {
+        const productsCost = productsInput.value > 0
+            ? productsInput.value * prices.products : 0;
+        const ordersCost = ordersInput.value > 0
+            ? ordersInput.value * prices.orders : 0;
+        const packageCost = packageInput.innerText.length > 0
+            ? choosePackage()
+            : 0;
+        const accountingCost = accountingCheckbox.checked
+            ? prices.accounting : 0;
+        const terminalCost = terminalCheckbox.checked
+            ? prices.terminal: 0;
+
+        totalPriceText.innerText =
+            "$" + (productsCost + ordersCost + packageCost + accountingCost + terminalCost);
+    }
 }
 
 
