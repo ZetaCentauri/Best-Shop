@@ -28,58 +28,46 @@ const totalPriceText = document.querySelector('.total__price');
 const checkboxes = document.querySelectorAll('.checkbox_input');
 
 //-------------------------------------------
-
 const prices = {
     products: 2,
     orders: 0.3,
     package: {
         basic: 20,
         professional: 30,
-        premium: 40
+        premium: 40,
     },
     accounting: 35,
     terminal: 9
 };
 
+/* Adding, calculating and removing products from the basket*/
+const addProductsAndOrders = function(e, selector) {
+    const el = document.querySelector(`.${selector}-output`)
+    const price = el.querySelector("[class$='price']")
+    const calculations = el.querySelector("[class$='value']");
+    el.classList.remove('d-none');
 
-const handleProducts = function(e) {
-    productsOutput.classList.remove('d-none');
-
-    if (!this.value.length) {
-        productsOutput.classList.add('d-none');
-    } else if  (this.value <= 0) {
-        productsPrice.innerText = "Value should be greater than 0";
-        productsCalculations.innerText = "";
+    if (!e.target.value.length) {
+        el.classList.add('d-none');
+    } else if  (e.target.value <= 0) {
+        price.innerText = "Value should be greater than 0";
+        calculations.innerText = "";
     } else {
-        productsCalculations.innerText = e.target.value + " * $" + prices.products;
-        let prodPrice = this.value * prices.products;
-        productsPrice.innerText = "$" + prodPrice.toFixed(2);
+        calculations.innerText = e.target.value + " * $" + prices[selector];
+        let prodPrice = e.target.value * prices[selector];
+        price.innerText = "$" + prodPrice.toFixed(2);
         totalOutput.classList.remove('d-none');
     }
     updateTotal();
 }
 
-productsInput.addEventListener("change", handleProducts);
-productsInput.addEventListener("keyup", handleProducts);
+productsInput.addEventListener("change", function(e) {addProductsAndOrders(e, "products")});
+productsInput.addEventListener("keyup", function(e) {addProductsAndOrders(e, 'products')});
 
-const handleOrders= function(e) {
-    ordersOutput.classList.remove('d-none');
-    if (!this.value.length) {
-        ordersOutput.classList.add('d-none');
-    } else if (this.value <= 0) {
-        ordersPrice.innerText = "Value should be greater than 0";
-        ordersCalculations.innerText = "";
-    } else {
-        ordersCalculations.innerText = this.value + " * $" + prices.orders;
-        let ordPrice = e.target.value * prices.orders;
-        ordersPrice.innerText = "$" + ordPrice.toFixed(2);
-        totalOutput.classList.remove('d-none');
-    }
-    updateTotal();
-}
+ordersInput.addEventListener("change", function(e) {addProductsAndOrders(e, "orders")});
+ordersInput.addEventListener("keyup", function(e) {addProductsAndOrders(e, 'orders')});
 
-ordersInput.addEventListener("change", handleOrders);
-ordersInput.addEventListener("keyup", handleOrders);
+
 
 const handleDropDownList = function(e) {
 dropdownList.classList.toggle('d-none');
@@ -88,18 +76,24 @@ this.classList.toggle('opened');
 
 packageInput.addEventListener('click', handleDropDownList);
 
-function choosePackage() {
-    let chosenPackagePrice = 0;
-    if (chosenPackage.innerText === "Basic") {
-        chosenPackagePrice = prices.package.basic;
-    }
-    if (chosenPackage.innerText === "Professional") {
-        chosenPackagePrice = prices.package.professional;
-    }
-    if (chosenPackage.innerText === "Premium") {
-        chosenPackagePrice = prices.package.premium;
-    }
-    return chosenPackagePrice;
+
+// function choosePackage() {
+//     let chosenPackagePrice = 0;
+//     if (chosenPackage.innerText === "Basic") {
+//         chosenPackagePrice = prices.package.basic;
+//     }
+//     if (chosenPackage.innerText === "Professional") {
+//         chosenPackagePrice = prices.package.professional;
+//     }
+//     if (chosenPackage.innerText === "Premium") {
+//         chosenPackagePrice = prices.package.premium;
+//     }
+//     return chosenPackagePrice;
+// }
+// Modyfikacja powyższej funkcji :)
+
+function choosePackage(packageName) {
+   return prices.package[packageName];
 }
 
 const handlePackageChoice = function(e) {
@@ -107,8 +101,8 @@ const handlePackageChoice = function(e) {
     chosenPackage.innerText = this.innerText;
     packageInput.childNodes[0].nodeValue = this.innerText;
     packageOutput.classList.remove('d-none');
-
-    packagePrice.innerText = "$" + choosePackage();
+    const packageString = this.innerText.toLowerCase();
+    packagePrice.innerText = "$" + choosePackage(packageString);
 
     totalOutput.classList.remove('d-none');
     updateTotal();
@@ -140,15 +134,15 @@ terminalCheckbox.addEventListener("change", handleTerminal);
 
 const updateTotal = function() {
     const displayedChoices = document.querySelectorAll(".calc__choice:not(.d-none)").length > 0;
-    console.log(displayedChoices);
 
     if (displayedChoices) {
         const productsCost = productsInput.value > 0
             ? productsInput.value * prices.products : 0;
         const ordersCost = ordersInput.value > 0
             ? ordersInput.value * prices.orders : 0;
+        const packageString = packageOutput.querySelector('.choice__value').innerText.toLowerCase();
         const packageCost = packageInput.innerText.length > 0
-            ? choosePackage()
+            ? choosePackage(packageString)
             : 0;
         const accountingCost = accountingCheckbox.checked
             ? prices.accounting : 0;
@@ -160,8 +154,5 @@ const updateTotal = function() {
     } else {
         totalOutput.classList.add('d-none');
     }
+
 }
-
-
-
-
